@@ -1,0 +1,16 @@
+{
+  "name": "TC-toolkit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node disenchant_generator.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "mysql2": "^1.6.1"
+  }
+}
