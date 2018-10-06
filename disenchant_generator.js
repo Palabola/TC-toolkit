@@ -50,7 +50,7 @@ async function generate() {
       for (let i = 0; i < result.item.length; i++) {
         let shuffled_array = shuffle(result.item);
 
-        if (i > 20) continue;
+        if (i > 20) break;
 
         // Some Disenchant template did not match with any item
         result.example_loot = disenchant_loot_template.filter(template => {
