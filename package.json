@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node disenchant_generator.js"
+    "start": "node map_spawn_visualizer.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "canvas-prebuilt": "^2.0.0-alpha.14",
     "dotenv": "^6.0.0",
+    "jimp": "^0.5.3",
     "mysql2": "^1.6.1"
   }
 }
