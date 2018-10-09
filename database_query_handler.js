@@ -20,6 +20,43 @@ const pool_world_db = mysql.createPool({
 const db_build = process.env.DB_BUILD;
 
 class query_handler {
+  async select_creature_template() {
+    try {
+      let [rows, fields] = await pool_dev_db.execute(
+        "SELECT `entry`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `femaleName`, `subname`, `TitleAlt`, `IconName`, `HealthScalingExpansion`, `RequiredExpansion`, `VignetteID`, `rank`, `family`, `type`, `type_flags`, `type_flags2`, `HealthModifier`, `ManaModifier`, `RacialLeader`, `movementId`, `VerifiedBuild` FROM `creature_template`"
+      );
+
+      return rows;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async select_creature_template2() {
+    try {
+      let [rows, fields] = await pool_dev_db.execute(
+        "SELECT `entry`, `gossip_menu_id`, `minlevel`, `maxlevel`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `unit_flags3`, `dynamicflags`, `VehicleId`, `HoverHeight` FROM `creature_template2`"
+      );
+
+      return rows;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async replace_creature_template(array) {
+    try {
+      let [rows, fields] = await pool_dev_db.query(
+        "REPLACE INTO `creature_template` SET ?",
+        array
+      );
+
+      return rows;
+    } catch (err) {
+      throw err;
+    }
+  }
+
   async select_item_template() {
     try {
       let [rows, fields] = await pool_dev_db.execute(
@@ -50,7 +87,7 @@ class query_handler {
   async select_creature_by_map(map) {
     try {
       let [rows, fields] = await pool_world_db.query(
-        "SELECT * FROM `creature` WHERE map = ?",
+        "SELECT * FROM `creature` WHERE map = '?'",
         map
       );
 

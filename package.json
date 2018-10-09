@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node map_spawn_visualizer.js"
+    "start": "node creature_template_merger.js"
   },
   "keywords": [],
   "author": "",

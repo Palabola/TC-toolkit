@@ -61,4 +61,4 @@ async function generate(map_id) {
   });
 }
 
-generate(1643);
+generate(0);
