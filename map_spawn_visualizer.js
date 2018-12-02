@@ -1,4 +1,6 @@
-const query_handler = require("./database_query_handler");
+const query_handler = require("./db_manager/database_query_handler");
+const cluster = require("cluster");
+const numCPUs = require("os").cpus().length;
 const Jimp = require("Jimp");
 
 async function generate(map_id) {
@@ -8,6 +10,7 @@ async function generate(map_id) {
 
   let y_max = (y_min = npc_spawns[0].position_y);
 
+  console.time("NPC Map");
   npc_spawns.map(npc => {
     if (npc.position_x > x_max) {
       x_max = npc.position_x;
@@ -22,6 +25,7 @@ async function generate(map_id) {
       y_min = npc.position_y;
     }
   });
+  console.timeEnd("NPC Map");
 
   console.log(x_max, y_max, x_min, y_min);
 
@@ -61,4 +65,4 @@ async function generate(map_id) {
   });
 }
 
-generate(0);
+generate(1642);

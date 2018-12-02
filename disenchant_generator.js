@@ -1,4 +1,4 @@
-const query_handler = require("./database_query_handler");
+const query_handler = require("./db_manager/database_query_handler");
 
 function shuffle(array) {
   let counter = array.length;
