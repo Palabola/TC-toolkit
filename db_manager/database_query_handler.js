@@ -44,6 +44,18 @@ class query_handler {
     }
   }
 
+  async select_quest_treasure_reward() {
+    try {
+      let [rows, fields] = await pool_dev_db.execute(
+        "SELECT * FROM `quest_treasure_reward`;"
+      );
+
+      return rows;
+    } catch (err) {
+      throw err;
+    }
+  }
+
   async select_creature_template() {
     try {
       let [rows, fields] = await pool_dev_db.execute(
@@ -241,6 +253,18 @@ class query_handler {
     try {
       let [rows, fields] = await pool_world_db.execute(
         "SELECT * FROM `creature_template_addon`"
+      );
+
+      return rows;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async select_creature_bad_trainers() {
+    try {
+      let [rows, fields] = await pool_world_db.execute(
+        "SELECT * FROM `creature_template` WHERE `npcflag` = `npcflag` | 64 and ( (`gossip_menu_id` not in (select MenuId from gossip_menu_option_trainer) and gossip_menu_id > 0) OR (`entry` not in (select CreatureId from creature_default_trainer) and gossip_menu_id = 0) );"
       );
 
       return rows;

@@ -40,6 +40,8 @@ UPDATE `gossip_menu_option` SET `OptionType` = '5', `OptionNpcFlag` = '16', `Ver
 
 UPDATE `gossip_menu_option` SET `OptionType` = '3', `OptionNpcFlag` = '128' WHERE `OptionText` LIKE '%let me browse%';
 
+UPDATE `gossip_menu_option` SET `OptionType` = '3', `OptionNpcFlag` = '128' WHERE `OptionText` LIKE '%I would like to buy%';
+
 
 /* Elevator fixer */
 

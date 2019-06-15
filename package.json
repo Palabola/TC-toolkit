@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node crea_go_merger.js"
+    "start": "node creature_trainer_generator.js"
   },
   "keywords": [],
   "author": "",

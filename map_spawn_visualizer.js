@@ -1,6 +1,5 @@
 const query_handler = require("./db_manager/database_query_handler");
-const cluster = require("cluster");
-const numCPUs = require("os").cpus().length;
+
 const Jimp = require("Jimp");
 
 async function generate(map_id) {
@@ -66,3 +65,4 @@ async function generate(map_id) {
 }
 
 generate(1642);
+generate(1643);
